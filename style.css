@@ -102,19 +102,101 @@ footer {
   color: white;
   text-align: center;
   padding: 10px;
-  position: relative; /* Cambiado de fixed para evitar problemas de posición */
   width: 100%;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
 
-img {
+footer p {
+  margin: 0;
+  padding: 10px;
+  font-size: 0.9em;
+}
+
+/* Ajuste para imagenes a un costado */
+img.cloud-image {
+  float: right;
+  margin-left: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+img.cloud-image:hover {
+  transform: scale(1.05);
+}
+
+/* Imágenes centradas */
+.centered-image {
+  display: block;
+  margin: 0 auto;
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para secciones */
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.image-text-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.image-text-container img {
+  flex: 1 1 300px; /* Imagen ocupará mínimo 300px */
+  max-width: 100%;
+  height: auto;
+}
+
+.image-text-container ul {
+  flex: 2 1 500px; /* Texto ocupará más espacio que la imagen */
+}
+
+/* Estilos para tarjetas */
+.tarjeta {
+  display: inline-block;
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.tarjeta-imagen {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .tarjeta {
+      width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tarjeta {
+      width: 100%;
+  }
+}
+
+/* Responsividad para el menú */
 @media screen and (max-width: 600px) {
   nav ul {
       flex-direction: column;
@@ -129,150 +211,3 @@ img {
       padding: 10px;
   }
 }
-
-.centered-image, .centered-video {
-  display: block;
-  margin: 0 auto;
-}
-
-.button {
-  background-color: #2d89ef;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s, transform 0.3s;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.button:hover {
-  background-color: #106ebe;
-  transform: translateY(-2px);
-}
-
-.highlight {
-  background-color: #f2f2f2;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.cloud-image {
-  float: right;
-  margin-left: 20px;
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.cloud-image:hover {
-  transform: scale(1.05);
-}
-
-section {
-  margin-bottom: 40px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-footer p {
-  margin: 0;
-  padding: 10px;
-  font-size: 0.9em;
-}
-.comparison-section {
-  text-align: center;
-}
-
-.comparison-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 80%; /* Ajusta el ancho máximo según sea necesario */
-}
-
-.comparison-table {
-  margin: 0 auto;
-  width: 80%; /* Ajusta el ancho de la tabla según sea necesario */
-}
-
-.cloud-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Centra las imágenes */
-}
-
-.cloud-business {
-  margin-bottom: 20px; /* Añade un margen para separar la imagen de otros elementos */
-}
-
-.cloud-users {
-  margin-top: 20px; /* Añade un margen superior para separar de la imagen anterior */
-}
-.image-text-container {
-  display: flex;
-  flex-wrap: wrap; /* Asegura que el contenido se ajuste en pantallas más pequeñas */
-  align-items: center;
-  gap: 20px; /* Añade espacio entre la imagen y el texto */
-  margin-bottom: 20px;
-}
-
-.cloud-image {
-  max-width: 100%;
-  height: auto;
-  flex: 1 1 200px; /* Ajusta el ancho mínimo de las imágenes */
-}
-
-.image-text-container ul {
-  flex: 2 1 300px; /* El texto ocupará más espacio que la imagen */
-}
-.section-title {
-  font-size: 1.5em; /* Aumenta el tamaño de la fuente */
-  margin-top: 20px; /* Añade espacio superior para separarlo del contenido anterior */
-}
-
-/* General styling for the card images */
-.tarjeta {
-  display: inline-block;
-  width: calc(33.33% - 20px); /* Ajusta el tamaño de las tarjetas para que ocupen el mismo espacio en filas de tres */
-  margin: 10px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.tarjeta-imagen {
-  max-width: 100%;
-  height: 150px; /* Fija una altura consistente para las imágenes */
-  object-fit: cover; /* Ajusta las imágenes sin deformarlas */
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-@media screen and (max-width: 768px) {
-  .tarjeta {
-      width: calc(50% - 20px); /* En pantallas más pequeñas, se mostrarán 2 tarjetas por fila */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .tarjeta {
-      width: 100%; /* En pantallas muy pequeñas, las tarjetas ocuparán el 100% del ancho */
-  }
-}
-/* Imagen a un costado */
-img {
-  float: right;
-  margin-left: 20px;
-  max-width: 250px;
-  height: auto;
-}
-
